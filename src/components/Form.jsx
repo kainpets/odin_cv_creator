@@ -1,5 +1,5 @@
 export default function PersonalInfoForm(props) {
-  const [name, email, number, school, studies, dateOfStudy, position, company, beginDate, endDate] = props.value;
+  const [name, email, number, school, studies, dateOfStudy, position, company, beginDate, endDate, submitted] = props.value;
   return (
     <>
       <form onSubmit={props.onSubmitClick}>
@@ -25,7 +25,7 @@ export default function PersonalInfoForm(props) {
         <label htmlFor="end-date">Work ended</label>
         <input type="date" id="end-date" end-date={endDate} onChange={props.onEndDateChange}/>
         <button type="submit">Submit</button>
-        <button type="reset" onClick={props.onResetClick}>Reset</button>
+        <button disabled={submitted} type="reset" onClick={props.onResetClick}>Reset</button>
       </form>
     </>
   )

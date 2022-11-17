@@ -8,12 +8,17 @@ function App() {
   const [number, setNumber] = useState("");
   const [school, setSchool] = useState("");
   const [studies, setStudies] = useState("");
-  const [dateOfStudy, setDateOfStudy] = useState(new Date());
   const [company, setCompany] = useState("");
   const [position, setPosition] = useState("");
+  const [dateOfStudy, setDateOfStudy] = useState(new Date());
   const [beginDate, setBeginDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+  const [submitted, setSubmitted] = useState(true);
   const [allValues, setAllValues] = useState([]);
+
+  //TODO add the ability to generate a pdf file
+  //TODO add the ability to add a photo
+  //TODO add the ability to edit each field after its rendered
 
   return (
     <div className="App">
@@ -42,6 +47,7 @@ function App() {
           position,
           beginDate,
           endDate,
+          submitted,
         ]}
       />
       {allValues.length > 0 && <RenderInfoList values={allValues} />}
@@ -104,6 +110,7 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setSubmitted(!submitted);
     setAllValues([
       ...allValues,
       name,
@@ -116,6 +123,7 @@ function App() {
       position,
       beginDate,
       endDate,
+      submitted
     ]);
   }
 }

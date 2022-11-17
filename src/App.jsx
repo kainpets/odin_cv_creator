@@ -1,6 +1,5 @@
 import { useState } from "react";
-import PersonalInfoForm from "./components/PersonalInfoForm.jsx";
-import EducationInfoForm from "./components/EducationInfoForm.jsx";
+import Form from "./components/Form.jsx";
 import RenderInfoList from "./components/RenderInfoList.jsx";
 
 function App() {
@@ -27,38 +26,42 @@ function App() {
   function handleSchoolChange(e) {
     setSchool(e.target.value);
   }
-  
+
   function handleStudiesChange(e) {
     setStudies(e.target.value);
   }
-  
+
   function handleDateOfStudyChange(e) {
-    setDateOfStudy(e.target.value)
+    setDateOfStudy(e.target.value);
   }
-  
+
   function handleSubmit(e) {
     e.preventDefault();
-    setAllValues([...values, name, email, number, school, studies, dateOfStudy])
+    setAllValues([
+      ...allValues,
+      name,
+      email,
+      number,
+      school,
+      studies,
+      dateOfStudy,
+    ]);
   }
-// TODO create only one form instead of multiple
+
   return (
     <div className="App">
       <h1>CV Creator</h1>
-      <PersonalInfoForm
+      <Form
         onNameChange={handleNameChange}
         onEmailChange={handleEmailChange}
         onNumberChange={handleNumberChange}
-        onSubmitClick={handleSubmit}
-        value={[name, email, number]}
-      />
-      <EducationInfoForm 
         onSchoolChange={handleSchoolChange}
         onStudiesChange={handleStudiesChange}
         onDateOfStudyChange={handleDateOfStudyChange}
-        values={[school, studies, dateOfStudy]}
+        onSubmitClick={handleSubmit}
+        value={[name, email, number, school, studies, dateOfStudy]}
       />
-      {allValues.length > 0 && <RenderInfoList values={allValues}/>}
-      
+      {allValues.length > 0 && <RenderInfoList values={allValues} />}
     </div>
   );
 }

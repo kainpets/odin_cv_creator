@@ -16,4 +16,5 @@ npm run dev
 ## Built with
 
 1. [React] (https://reactjs.org/)
-2. [Pico css] (https://picocss.com/)
+2. [Vite] (https://vitejs.dev/)
+3. [Pico-css] (https://picocss.com/)

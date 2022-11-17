@@ -15,5 +15,5 @@ npm run dev
 
 ## Built with
 
-[React] (https://reactjs.org/)
-[Pico css] (https://picocss.com/)
+1. [React] (https://reactjs.org/)
+2. [Pico css] (https://picocss.com/)

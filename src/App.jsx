@@ -64,7 +64,7 @@ function App() {
     setBeginDate(new Date());
     setDateOfStudy(new Date());
     setEndDate(new Date());
-    setSubmitted(!submitted);
+    setSubmitted(previouslySubmitted => !previouslySubmitted);
   }
 
   function handleEndDateChange(e) {

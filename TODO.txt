@@ -1,3 +1,7 @@
-  //TODO add the ability to generate a pdf file
-  //TODO add the ability to add a photo
-  //TODO render the form to display photo and all values
+  TODO copy the form fields from Osman
+  TODO add the ability to generate a pdf file
+  maybe https://www.npmjs.com/package/react-to-print
+  TODO render the form to display photo 
+  TODO prevent the boolean value from submitted from being rendered (maybe set the button in other component)
+  TODO add react-icons
+  TODO add the ability to render more than one form for experience and education (maybe split form into separate components)

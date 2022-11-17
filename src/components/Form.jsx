@@ -25,6 +25,7 @@ export default function PersonalInfoForm(props) {
         <label htmlFor="end-date">Work ended</label>
         <input type="date" id="end-date" end-date={endDate} onChange={props.onEndDateChange}/>
         <button type="submit">Submit</button>
+        <button type="reset" onClick={props.onResetClick}>Reset</button>
       </form>
     </>
   )

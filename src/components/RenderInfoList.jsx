@@ -1,12 +1,16 @@
+import {useState} from "react";
+
 export default function RenderInfoList(props) {
+  const [values, setValues] = useState(props.values) 
 
   return (
     <>
       <ul>
-        {props.values.map((prop, index) => (
-            <li key={index}>{prop.toString()}</li>
+        {values.map((value, index) => (
+            <li key={index}>{value.toString()}</li>
         ))}
       </ul>
+      
     </>
   );
 }

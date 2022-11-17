@@ -29,6 +29,7 @@ function App() {
         onPositionChange={handlePositionChange}
         onBeginDateChange={handleBeginDateChange}
         onEndDateChange={handleEndDateChange}
+        onResetClick={handleResetClick}
         onSubmitClick={handleSubmit}
         value={[
           name,
@@ -46,6 +47,20 @@ function App() {
       {allValues.length > 0 && <RenderInfoList values={allValues} />}
     </div>
   );
+
+  function handleResetClick() {
+    setAllValues([]);
+    setName("");
+    setEmail("");
+    setNumber("")
+    setSchool("")
+    setCompany("")
+    setPosition("")
+    setStudies("")
+    setBeginDate(new Date())
+    setDateOfStudy(new Date())
+    setEndDate(new Date())
+  }
 
   function handleEndDateChange(e) {
     setEndDate(e.target.value);

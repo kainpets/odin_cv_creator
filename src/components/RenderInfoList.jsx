@@ -4,9 +4,7 @@ export default function RenderInfoList(props) {
     <>
       <ul>
         {props.values.map((prop, index) => (
-          <>
             <li key={index}>{prop.toString()}</li>
-          </>
         ))}
       </ul>
     </>

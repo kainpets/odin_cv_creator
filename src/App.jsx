@@ -16,10 +16,7 @@ function App() {
   const [submitted, setSubmitted] = useState(true);
   const [allValues, setAllValues] = useState([]);
 
-  //TODO add the ability to generate a pdf file
-  //TODO add the ability to add a photo
-  //TODO add the ability to edit each field after its rendered
-  //TODO render the form to display photo and all values
+
 
   return (
     <div className="App">
@@ -59,15 +56,15 @@ function App() {
     setAllValues([]);
     setName("");
     setEmail("");
-    setNumber("")
-    setSchool("")
-    setCompany("")
-    setPosition("")
-    setStudies("")
-    setBeginDate(new Date())
-    setDateOfStudy(new Date())
-    setEndDate(new Date())
-    setSubmitted(!submitted)
+    setNumber("");
+    setSchool("");
+    setCompany("");
+    setPosition("");
+    setStudies("");
+    setBeginDate(new Date());
+    setDateOfStudy(new Date());
+    setEndDate(new Date());
+    setSubmitted(!submitted);
   }
 
   function handleEndDateChange(e) {
@@ -125,7 +122,7 @@ function App() {
       position,
       beginDate,
       endDate,
-      submitted
+      submitted,
     ]);
   }
 }

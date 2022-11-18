@@ -1,14 +1,15 @@
 import { useState } from "react";
 
-export default function PersonalForm() {
+export default function PersonalForm(props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
+  const [values, setValues] = useState([]);
 
   return (
     <>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <h2>Personal info</h2>
         <label htmlFor="firstName">First name</label>
         <input
@@ -43,4 +44,10 @@ export default function PersonalForm() {
       </form>
     </>
   );
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    setValues([...values, firstName, lastName, email, number]);
+    props.value(values);
+  }
 }
